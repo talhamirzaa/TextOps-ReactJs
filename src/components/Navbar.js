@@ -19,7 +19,7 @@ export default function Navbar(props) {
             <Link className={`nav-link ${props.state2}`} onClick={props.chngstt} to="/about">About Us</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link"  to="/">{props.reach}</Link>
+            <Link className="nav-link"  to="/service">{props.reach}</Link>
           </li>
         </ul>
         <form className="d-flex" role="search">
