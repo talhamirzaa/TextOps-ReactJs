@@ -2,6 +2,12 @@ import React,{useState} from 'react'
 
 export default function TextForm(props) {
 
+  const [txt, setTxt] = useState('');
+  const [wc,setwc]=useState(0);
+  // Txt="New value" //wrong method
+  //setTxt("Enter your Text here"); //correct method
+  
+
   const setUpclick=()=>{
     //console.log("btn clicked");
     //let res=txt.toUpperCase();//storing in new var
@@ -17,6 +23,12 @@ export default function TextForm(props) {
   const HandleEmpLineclick=()=>{
     let bld=txt.split(/\r?\n/).filter(line => line.trim() !== '').join('\n');;
     setTxt(bld);
+  }
+
+  //my added functn
+  const HandleClearAll=()=>{
+    setTxt('');
+    setwc(0);
   }
 
   let setOnchange=(event)=>{
@@ -41,21 +53,19 @@ export default function TextForm(props) {
      setwc(res.length);
   }
 
-  const [txt, setTxt] = useState('');
-  const [wc,setwc]=useState(0);
-  // Txt="New value" //wrong method
-  //setTxt("Enter your Text here"); //correct method
+  
   return (
     <>
     <div className='conatiner my-3' style={{color:props.mode==='dark'?'white':'black'}}>
       <div className="mb-3">
-        <h2>{props.head}</h2>
+        <h4>{props.head}</h4>
         <textarea className="form-control" value={txt} placeholder='Enter your Text Here...' onChange={setOnchange} onInput={wordcount} 
         style={{backgroundColor:props.mode==='dark'?'#476481':'white',color: props.mode==='dark'?'white':'#3e5871'}} id="inptext" rows="7"></textarea>
       </div>
-      <button className="btn btn-primary" onClick={setUpclick}>Uppdercase</button>
-      <button className="btn btn-primary mx-3" onClick={setLoclick}>Lowercase</button>
-      <button className="btn btn-primary mx-1" onClick={HandleEmpLineclick}>Remove Empty Line</button>
+      <button className="btn btn-primary" onClick={setUpclick}>Upper case</button>
+      <button className="btn btn-primary mx-2" onClick={setLoclick}>Lower case</button>
+      <button className="btn btn-primary" onClick={HandleEmpLineclick}>Remove Empty Line</button>
+      <button className="btn btn-primary mx-2" onClick={HandleClearAll}>Clear All</button>
       
     </div>
     <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
