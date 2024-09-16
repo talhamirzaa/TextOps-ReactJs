@@ -65,7 +65,7 @@ export default function TextForm(props) {
       <button className="btn btn-primary" onClick={setUpclick}>Upper case</button>
       <button className="btn btn-primary mx-2" onClick={setLoclick}>Lower case</button>
       <button className="btn btn-primary" onClick={HandleEmpLineclick}>Remove Empty Line</button>
-      <button className="btn btn-primary mx-2" onClick={HandleClearAll}>Clear All</button>
+      <button className="btn btn-outline-danger mx-2" onClick={HandleClearAll}>Clear All</button>
       
     </div>
     <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
