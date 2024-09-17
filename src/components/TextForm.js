@@ -62,10 +62,11 @@ export default function TextForm(props) {
         <textarea className="form-control" value={txt} placeholder='Enter your Text Here...' onChange={setOnchange} onInput={wordcount} 
         style={{backgroundColor:props.mode==='dark'?'#476481':'white',color: props.mode==='dark'?'white':'#3e5871'}} id="inptext" rows="7"></textarea>
       </div>
-      <button className="btn btn-primary" onClick={setUpclick}>Upper case</button>
-      <button className="btn btn-primary mx-2" onClick={setLoclick}>Lower case</button>
-      <button className="btn btn-primary" onClick={HandleEmpLineclick}>Remove Empty Line</button>
-      <button className="btn btn-outline-danger mx-2" onClick={HandleClearAll}>Clear All</button>
+      {/* change all btn to green */}
+      <button className="btn btn-primary rounded-3" onClick={setUpclick}>Caps All</button>
+      <button className="btn btn-outline-success mx-2 rounded-3" onClick={setLoclick}>Lower case</button>
+      <button className="btn btn-primary rounded-3" onClick={HandleEmpLineclick}>Remove Empty Line</button>
+      <button className="btn btn-outline-danger mx-2 rounded-3" onClick={HandleClearAll}>Clear All</button>
       
     </div>
     <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
