@@ -63,9 +63,9 @@ export default function TextForm(props) {
         style={{backgroundColor:props.mode==='dark'?'#476481':'white',color: props.mode==='dark'?'white':'#3e5871'}} id="inptext" rows="7"></textarea>
       </div>
       {/* change all btn to green */}
-      <button className="btn btn-primary rounded-3" onClick={setUpclick}>Caps All</button>
-      <button className="btn btn-outline-success mx-2 rounded-3" onClick={setLoclick}>Lower case</button>
-      <button className="btn btn-primary rounded-3" onClick={HandleEmpLineclick}>Remove Empty Line</button>
+      <button className="btn btn-success rounded-3" onClick={setUpclick}>Caps All</button>
+      <button className="btn btn-success mx-2 rounded-3" onClick={setLoclick}>Lower case</button>
+      <button className="btn btn-success rounded-3" onClick={HandleEmpLineclick}>Remove Empty Line</button>
       <button className="btn btn-outline-danger mx-2 rounded-3" onClick={HandleClearAll}>Clear All</button>
       
     </div>
